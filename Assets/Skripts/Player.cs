@@ -5,29 +5,31 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float _power;
-    [SerializeField] private float _MaxHelth;
-    [SerializeField] private float _MinHelth;
+    [SerializeField] private float _maxHealth;
+    [SerializeField] private float _minHealth;
 
-    public float _helth { get; private set; }
+    public float Health { get; private set; }
 
     private void Start()
     {
-        _helth = _MaxHelth;
+        Health = _maxHealth;
     }
 
-    public void OnHealButtonClick()
+    public void TakeHeal()
     {
-        if (_helth < _MaxHelth)
+        if (Health < _maxHealth)
         {
-            _helth += _power;
+            Health += _power;
         }
+        Debug.Log(Health);
     }
 
-    public void OnDamageButtonClick()
+    public void TakeDamage()
     {
-        if (_helth > _MinHelth)
+        if (Health > _minHealth)
         {
-            _helth -= _power;
+            Health -= _power;
         }
+        Debug.Log(Health);
     }
 }

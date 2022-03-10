@@ -406,7 +406,19 @@ MonoBehaviour:
   m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &759625465
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,8 +594,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _power: 10
-  _MaxHelth: 100
-  _MinHelth: 0
+  _maxHealth: 100
+  _minHealth: 0
 --- !u!1 &998242989
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,7 +681,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 967174431}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: OnDamageButtonClick
+        m_MethodName: TakeDamage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1251,7 +1263,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 967174431}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: OnHealButtonClick
+        m_MethodName: TakeHeal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -10,11 +10,11 @@ public class HealthBar : MonoBehaviour
 
     private void Start()
     {
-        _slider.maxValue = _player._helth;
+        _slider.maxValue = _player.Health;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        _slider.value = Mathf.MoveTowards(_slider.value, _player._helth, 10f * Time.deltaTime);
+        _slider.value = Mathf.MoveTowards(_slider.value, _player.Health, 10f * Time.deltaTime);
     }
 }
