@@ -596,6 +596,7 @@ MonoBehaviour:
   _power: 10
   _maxHealth: 100
   _minHealth: 0
+  _slider: {fileID: 754659171}
 --- !u!1 &998242989
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,6 +882,7 @@ GameObject:
   - component: {fileID: 1338743331}
   - component: {fileID: 1338743333}
   - component: {fileID: 1338743332}
+  - component: {fileID: 1338743334}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -945,6 +947,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1338743330}
   m_CullTransparentMesh: 1
+--- !u!114 &1338743334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338743330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4a3d78962d80064f928387709cad6c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _power: 10
+  _maxHealth: 100
+  _minHealth: 0
+  _slider: {fileID: 754659171}
 --- !u!1 &1484902921
 GameObject:
   m_ObjectHideFlags: 0
@@ -1072,7 +1090,6 @@ GameObject:
   - component: {fileID: 1714707418}
   - component: {fileID: 1714707417}
   - component: {fileID: 1714707416}
-  - component: {fileID: 1714707420}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1164,20 +1181,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1714707420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1714707415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8b58b26863481144b69e8c754c055e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _slider: {fileID: 754659171}
-  _player: {fileID: 967174431}
 --- !u!1 &1973412462
 GameObject:
   m_ObjectHideFlags: 0
