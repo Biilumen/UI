@@ -6,49 +6,21 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    [SerializeField] private float _power;
-    [SerializeField] private float _maxHealth;
-    [SerializeField] private float _minHealth;
+    [SerializeField] private Player _player;
     [SerializeField] private Slider _slider;
 
-    private float _health;
-
-    private void Start()
+  
+    private IEnumerator ChngeSliderValue()
     {
-        _health = _maxHealth;
-    }
-
-    private IEnumerator SliderValueChnge()
-    {
-        while (_slider.value != _health)
+        while (_slider.value != _player.Health)
         {
-        _slider.value = Mathf.MoveTowards(_slider.value, _health, 10f * Time.deltaTime);
+        _slider.value = Mathf.MoveTowards(_slider.value, _player.Health, 10f * Time.deltaTime);
         yield return null;
         }
-        StopCoroutine(SliderValueChnge());
     }
 
-    private void CoroutineStart()
+    public void CangeHealthBar()
     {
-        var coroutineJob = StartCoroutine(SliderValueChnge());
-    }
-
-   
-    public void TakeHeal()
-    {
-        if (_health < _maxHealth)
-        {
-            _health += _power;
-        }
-        CoroutineStart();
-    }
-
-    public void TakeDamage()
-    {
-        if (_health > _minHealth)
-        {
-            _health -= _power;
-        }
-        CoroutineStart();
+        var coroutineJob = StartCoroutine(ChngeSliderValue());
     }
 }
