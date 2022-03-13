@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,26 +11,22 @@ public class Player : MonoBehaviour
 
     public float Health { get; private set; }
 
-    void Start()
+    private void Start()
     {
         Health = _maxHealth;
     }
 
     public void TakeHeal()
     {
-        if (Health < _maxHealth)
-        {
-            Health += _power;
-        }
+        Health += _power;
+        Health = Mathf.Clamp(Health ,_minHealth, _maxHealth);
         OnHelthChnge.Invoke();
     }
 
     public void TakeDamage()
     {
-        if (Health > _minHealth)
-        {
-            Health -= _power;
-        }
+        Health -= _power;
+        Health = Mathf.Clamp(Health, _minHealth, _maxHealth);
         OnHelthChnge.Invoke();
     }
 }
