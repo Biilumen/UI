@@ -1,14 +1,12 @@
 using UnityEngine;
-using UnityEngine.Events;
-
+using System;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float _power;
     [SerializeField] private float _maxHealth;
     [SerializeField] private float _minHealth;
 
-    [SerializeField] private UnityEvent OnHelthChnge;
-
+    public Action OnHelthChange;
     public float Health { get; private set; }
 
     private void Start()
@@ -20,13 +18,13 @@ public class Player : MonoBehaviour
     {
         Health += _power;
         Health = Mathf.Clamp(Health ,_minHealth, _maxHealth);
-        OnHelthChnge.Invoke();
+        OnHelthChange?.Invoke();
     }
 
     public void TakeDamage()
     {
         Health -= _power;
         Health = Mathf.Clamp(Health, _minHealth, _maxHealth);
-        OnHelthChnge.Invoke();
+        OnHelthChange?.Invoke();
     }
 }

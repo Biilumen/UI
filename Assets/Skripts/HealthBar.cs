@@ -11,6 +11,12 @@ public class HealthBar : MonoBehaviour
     {
         _slider.maxValue = _player.Health;
         _slider.value = _player.Health;
+        _player.OnHelthChange += ChangeHealth;
+    }
+
+    private void OnDisable()
+    {
+        _player.OnHelthChange -= ChangeHealth;
     }
 
     private IEnumerator ChngeSliderValue()
@@ -22,8 +28,8 @@ public class HealthBar : MonoBehaviour
         }
     }
 
-    public void CangeHealthBar()
+    private void ChangeHealth()
     {
-        var coroutineJob = StartCoroutine(ChngeSliderValue());
+        var ChngeSliderValueJob = StartCoroutine(ChngeSliderValue());
     }
 }
