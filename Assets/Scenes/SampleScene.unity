@@ -593,24 +593,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8506ff6bada0b04fb87805f39e58fa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _power: 13
+  _power: 14
   _maxHealth: 50
   _minHealth: 0
-  OnHelthChnge:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1714707420}
-        m_TargetAssemblyTypeName: HealthBar, Assembly-CSharp
-        m_MethodName: CangeHealthBar
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &998242989
 GameObject:
   m_ObjectHideFlags: 0

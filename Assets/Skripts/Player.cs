@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float _maxHealth;
     [SerializeField] private float _minHealth;
 
-    public Action OnHelthChange;
+    public Action HelthChangeEvent;
     public float Health { get; private set; }
 
     private void Start()
@@ -14,17 +14,20 @@ public class Player : MonoBehaviour
         Health = _maxHealth;
     }
 
+    private void Update()
+    {
+        Debug.Log(Health);
+    }
+
     public void TakeHeal()
     {
-        Health += _power;
-        Health = Mathf.Clamp(Health ,_minHealth, _maxHealth);
-        OnHelthChange?.Invoke();
+        Health = Mathf.Clamp(Health + _power ,_minHealth, _maxHealth);
+        HelthChangeEvent?.Invoke();
     }
 
     public void TakeDamage()
     {
-        Health -= _power;
-        Health = Mathf.Clamp(Health, _minHealth, _maxHealth);
-        OnHelthChange?.Invoke();
+        Health = Mathf.Clamp(Health - _power, _minHealth, _maxHealth);
+        HelthChangeEvent?.Invoke();
     }
 }

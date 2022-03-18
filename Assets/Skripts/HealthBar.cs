@@ -11,12 +11,12 @@ public class HealthBar : MonoBehaviour
     {
         _slider.maxValue = _player.Health;
         _slider.value = _player.Health;
-        _player.OnHelthChange += ChangeHealth;
+        _player.HelthChangeEvent += ChangeHealth;
     }
 
     private void OnDisable()
     {
-        _player.OnHelthChange -= ChangeHealth;
+        _player.HelthChangeEvent -= ChangeHealth;
     }
 
     private IEnumerator ChngeSliderValue()
